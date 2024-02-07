@@ -1,0 +1,16 @@
+{
+  "name": "ifrs-error-pages",
+  "private": true,
+  "scripts": {
+    "clean": "del-cli ./dist/",
+    "dev": "npm run clean && pug . --watch --out ./dist/",
+    "build": "npm run clean && pug . --no-debug --silet --out ./dist/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@picocss/pico": "^1.5.11",
+    "del-cli": "^5.1.0",
+    "pug": "^3.0.2",
+    "pug-cli": "^1.0.0-alpha6"
+  }
+}
