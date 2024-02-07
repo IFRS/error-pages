@@ -1,0 +1,58 @@
+include includes/mixins.pug
+
+doctype html
+html(lang="pt-BR" data-theme="light")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="cache-control" content="no-cache")
+    meta(name="viewport" content="width=device-width,initial-scale=1.0")
+    meta(name="robots" content="noindex,nofollow")
+    title Erro
+    style
+      include node_modules/@picocss/pico/css/pico.min.css
+    style.
+      :root:not([data-theme="dark"]), [data-theme="light"] {
+        --primary: #2f9e41;
+        --primary-hover: #267e34;
+      }
+      body {
+        background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+      }
+      main {
+        --font-size: 0.9rem;
+      }
+      main img {
+        max-width: 486px;
+        width: 100%;
+        height: auto;
+      }
+  body
+    main.container
+      div.grid(style="--grid-spacing-horizontal: 2rem; align-items: center;")
+        div(style="text-align: center;")
+          include image.base64
+        div
+          div.headings
+            h1 Site em manuten&ccedil;&atilde;o!
+            p Por favor, tente novamente mais tarde.
+          div.headings(lang="en-US")
+            h1 Website under maintenance!
+            p Please, try again later.
+      div.grid(style="margin-top: var(--block-spacing-vertical)")
+        p Infelizmente esta p&aacute;gina est&aacute; temporariamente indispon&iacute;vel.
+          br
+          .
+            Pedimos desculpas pelo inconveniente e agradecemos a paci&ecirc;ncia.
+        p(lang="en-US") Unfortunately this page is temporarily unavailable.
+          br
+          .
+            We apologize for the inconvenience and thanks for your patience.
+      div.grid(style="margin-top: var(--block-spacing-vertical)")
+        button.secondary(style="width: auto; margin: 0 auto;" onClick="window.location.reload();")
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38"/></svg>
+          .
+            &nbsp;Tentar novamente
+    hr(style="--muted-border-color: #cccccc;")
+    footer.container(style="--font-size: 0.8em; padding-bottom: 0.2rem; text-align: center;")
+      block footer
+      p(style="--font-size: 0.7em; margin-bottom: 0;") IFRS - Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Sul

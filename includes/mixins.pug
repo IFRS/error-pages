@@ -1,0 +1,6 @@
+mixin error(title, desc)
+  p(lang="en-US" style="--typography-spacing-vertical: 3rem;" class!=attributes.class)
+    strong= title
+    if desc
+      br
+      = desc
